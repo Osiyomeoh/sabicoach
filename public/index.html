@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SabiCoach — Mistake to mastery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <nav><a class="brand" href="#"><span>●</span> sabi<span>coach</span></a><div class="nav-right"><span class="network">⌁ Low data mode</span><button id="teacher-toggle" class="ghost">Teacher view</button><div class="avatar">AM</div></div></nav>
+      <section id="student-view">
+        <header class="hero"><p class="eyebrow">JAMB MATHEMATICS · PERSONAL COACH</p><h1>Don’t just get it wrong.<br /><em>Understand why.</em></h1><p class="lede">Upload a question and your working. I’ll find the exact point where it went off track, then help you fix it.</p></header>
+        <section class="journey" aria-label="Learning progress"><div class="step active"><b>1</b><span>Show your work</span></div><i></i><div class="step"><b>2</b><span>Find the gap</span></div><i></i><div class="step"><b>3</b><span>Prove mastery</span></div></section>
+        <section id="upload-card" class="card upload-card"><div class="prompt-head"><div><p class="eyebrow">TODAY'S FOCUS</p><h2>Linear equations</h2></div><span class="chip">JAMB 2026</span></div><label id="drop-zone" class="drop-zone"><input id="photo" type="file" accept="image/*" /><div id="upload-empty"><div class="camera">⌁</div><strong>Photograph your question + working</strong><small>Use clear light. Your handwriting does not need to be perfect.</small></div><img id="preview" alt="Uploaded attempt preview" /></label><div class="or"><span>or use the demo attempt</span></div><button id="demo-button" class="demo-button"><span>✦</span> Analyse a sample JAMB attempt</button></section>
+        <section id="analysis" class="analysis hidden" aria-live="polite"></section>
+      </section>
+      <section id="teacher-view" class="hidden teacher"><header class="teacher-head"><div><p class="eyebrow">SS3A · 32 ACTIVE STUDENTS</p><h1>Today’s <em>learning signals.</em></h1><p>What needs reteaching before the next JAMB practice set?</p></div><button id="student-toggle" class="ghost">← Student view</button></header><div class="impact"><div><span>72%</span><small>attempted today</small></div><div><span>+18</span><small>masteries this week</small></div><div><span>8 min</span><small>recommended intervention</small></div></div><section class="card intervention"><div class="signal"><span class="signal-dot"></span><p class="eyebrow">PRIORITY INTERVENTION</p></div><h2>Transposition signs are tripping up the class.</h2><p>12 students moved a negative term across the equals sign without changing its sign. This is a procedural slip, not a conceptual gap.</p><button class="primary">Start 8-minute reteach →</button></section><section class="card heatmap"><div class="section-title"><div><p class="eyebrow">MISCONCEPTION MAP</p><h2>Where your class needs you</h2></div><span class="chip neutral">Live</span></div><div class="bars"><div><label><span>Sign change during transposition</span><b>38%</b></label><i><em style="width: 76%"></em></i></div><div><label><span>Expanding brackets</span><b>22%</b></label><i><em style="width: 44%"></em></i></div><div><label><span>Fractions in equations</span><b>16%</b></label><i><em style="width: 32%"></em></i></div><div><label><span>Question interpretation</span><b>9%</b></label><i><em style="width: 18%"></em></i></div></div></section></section>
+    </main><script src="/app.js"></script>
+  </body>
+</html>

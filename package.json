@@ -1,0 +1,11 @@
+{
+  "name": "sabicoach",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "mobile": "npm --workspace @sabicoach/mobile run start",
+    "api": "npm --workspace @sabicoach/api run dev",
+    "demo:web": "npm --workspace @sabicoach/mobile run web",
+    "export:demo": "npm --workspace @sabicoach/mobile run export:web"
+  }
+}
