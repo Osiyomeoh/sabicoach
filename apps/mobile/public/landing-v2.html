@@ -125,6 +125,30 @@
         .bento-card:active {
             transform: scale(0.98);
         }
+        .hero-3d-stage { perspective: 1000px; }
+        .hero-3d-card {
+            transform: rotateX(4deg) rotateY(-10deg) rotateZ(1deg);
+            transform-style: preserve-3d;
+            animation: rescueFloatMobile 6s ease-in-out infinite;
+            will-change: transform;
+        }
+        .hero-3d-card::after {
+            content: "";
+            position: absolute;
+            inset: 12% -16% -16%;
+            background: rgba(185, 243, 0, 0.25);
+            filter: blur(28px);
+            transform: translateZ(-42px);
+            z-index: -1;
+            border-radius: 50%;
+        }
+        @keyframes rescueFloatMobile {
+            0%, 100% { transform: rotateX(4deg) rotateY(-10deg) rotateZ(1deg) translateY(0); }
+            50% { transform: rotateX(-1deg) rotateY(-4deg) rotateZ(-1deg) translateY(-12px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-3d-card { animation: none; }
+        }
     </style>
 <style>
     body {
@@ -163,9 +187,9 @@
                     </button>
 </div>
 <!-- App Mockup / Rescue Map Visualization -->
-<div class="mt-xl relative w-full flex justify-center">
+<div class="mt-xl relative w-full flex justify-center hero-3d-stage">
 <div class="absolute inset-0 bg-secondary-fixed-dim/20 blur-3xl rounded-full -z-10"></div>
-<div class="w-64 h-[500px] bg-white rounded-[3rem] border-[8px] border-primary-container shadow-2xl relative overflow-hidden bento-card">
+<div class="hero-3d-card w-64 h-[500px] bg-white rounded-[3rem] border-[8px] border-primary-container shadow-2xl relative overflow-hidden bento-card">
 <div class="absolute top-0 w-full h-6 bg-primary-container"></div>
 <div class="p-md pt-lg">
 <div class="flex justify-between items-center mb-md">
