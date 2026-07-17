@@ -2,7 +2,10 @@
   "buildCommand": "npm run export:web",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/demo", "destination": "/demo.html" },
+    { "source": "/app", "destination": "/app/index.html" },
+    { "source": "/capture", "destination": "/capture.html" },
+    { "source": "/journey", "destination": "/app/index.html" },
+    { "source": "/demo", "destination": "/app/index.html" },
     { "source": "/", "destination": "/index.html" }
   ]
 }

@@ -7,7 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "export:web": "rm -rf dist && expo export --platform web && cp dist/responsive-landing.html dist/index.html",
+    "build:web-app": "rm -rf web-dist && tsc -p web/tsconfig.json && cp web/index.html web-dist/index.html && cp web/src/*.css web-dist/assets/",
+    "export:web": "npm run build:web-app && rm -rf dist && expo export --platform web && cp dist/responsive-landing.html dist/index.html && mkdir -p dist/app && cp -R web-dist/. dist/app/",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

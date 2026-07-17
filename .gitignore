@@ -7,3 +7,5 @@ apps/mobile/dist/
 !.env.example
 .DS_Store
 npm-debug.log*
+.vercel
+apps/mobile/web-dist/
