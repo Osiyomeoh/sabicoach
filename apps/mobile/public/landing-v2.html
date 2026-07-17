@@ -214,7 +214,7 @@
 </header>
 <main class="w-full">
 <!-- Hero Section -->
-<section class="px-gutter pt-xl pb-lg overflow-hidden relative">
+<section id="top" class="px-gutter pt-xl pb-lg overflow-hidden relative">
 <div class="max-w-container-max mx-auto flex flex-col items-center text-center hero-message">
 <h1 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-md max-w-xs">Every mistake has a way back.</h1>
 <p class="font-body-md text-on-surface-variant mb-lg max-w-sm">
@@ -289,7 +289,7 @@
 </div>
 </section>
 <!-- How it works -->
-<section class="px-gutter py-xl">
+<section id="how-it-works" class="px-gutter py-xl">
 <div class="max-w-container-max mx-auto">
 <h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-xl">The 4-Step Rescue</h2>
 <div class="space-y-xl relative">
@@ -318,7 +318,7 @@
 </div>
 </section>
 <!-- Interactive Demo Card -->
-<section class="px-gutter py-xl">
+<section id="interactive-demo" class="px-gutter py-xl">
 <div class="bg-primary-container text-white p-lg rounded-[2rem] relative overflow-hidden">
 <div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed/10 blur-3xl"></div>
 <h2 class="font-display-lg-mobile text-display-lg-mobile mb-md italic">Try the Rescue Map</h2>
@@ -344,7 +344,7 @@
 </div>
 </section>
 <!-- Exam Mistake DNA -->
-<section class="px-gutter py-xl bg-white">
+<section id="mistake-dna" class="px-gutter py-xl bg-white">
 <div class="max-w-container-max mx-auto">
 <h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-lg text-center">Recoverable Marks</h2>
 <div class="flex flex-col items-center justify-center gap-xl">
@@ -366,7 +366,7 @@
 </div>
 </section>
 <!-- Teacher Section -->
-<section class="px-gutter py-xl bg-surface-container-highest">
+<section id="teacher-tools" class="px-gutter py-xl bg-surface-container-highest">
 <div class="max-w-container-max mx-auto">
 <div class="flex flex-col items-center text-center">
 <div class="w-20 h-20 rounded-full border-4 border-white shadow-md mb-md overflow-hidden">
@@ -391,19 +391,19 @@
 </main>
 <!-- Bottom Navigation Shell -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 shadow-lg bg-surface dark:bg-surface-container-lowest rounded-t-xl">
-<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="#top">
 <span class="material-symbols-outlined" data-icon="home">home</span>
 <span class="font-label-sm text-label-sm">Home</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-variant dark:hover:bg-primary-container active:scale-90 transition-transform duration-200" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-variant dark:hover:bg-primary-container active:scale-90 transition-transform duration-200" href="#how-it-works">
 <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
 <span class="font-label-sm text-label-sm">Practice</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-variant dark:hover:bg-primary-container active:scale-90 transition-transform duration-200" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-variant dark:hover:bg-primary-container active:scale-90 transition-transform duration-200" href="#mistake-dna">
 <span class="material-symbols-outlined" data-icon="auto_graph">auto_graph</span>
 <span class="font-label-sm text-label-sm">Mastery</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-variant dark:hover:bg-primary-container active:scale-90 transition-transform duration-200" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-variant dark:hover:bg-primary-container active:scale-90 transition-transform duration-200" href="#teacher-tools">
 <span class="material-symbols-outlined" data-icon="person">person</span>
 <span class="font-label-sm text-label-sm">Profile</span>
 </a>
@@ -423,5 +423,13 @@
                 el.classList.remove('hidden');
             }
         }
+        document.querySelectorAll('button').forEach((button) => {
+            const label = button.textContent.trim().toLowerCase();
+            if (label.includes('start my rescue map') || label.includes('view demo') || label.includes('data save')) {
+                button.addEventListener('click', () => {
+                    document.querySelector('#interactive-demo')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
+        });
     </script>
 </body></html>

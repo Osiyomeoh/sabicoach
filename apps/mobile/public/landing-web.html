@@ -195,11 +195,11 @@
 <span class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary italic">SabiCoach</span>
 </div>
 <div class="hidden md:flex items-center gap-xl">
-<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#">How it works</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#">For students</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#">For teachers</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#how-it-works">How it works</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#interactive-demo">For students</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#teacher-tools">For teachers</a>
 </div>
-<button class="bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary px-lg py-md rounded-xl font-label-md text-label-md active:scale-95 transition-all shadow-sm">
+<button data-scroll-target="#interactive-demo" class="bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary px-lg py-md rounded-xl font-label-md text-label-md active:scale-95 transition-all shadow-sm">
                 Try live demo
             </button>
 </nav>
@@ -216,7 +216,7 @@
                     Stop guessing. We analyze your WAEC and JAMB workings to find exactly where you leak marks. Recover your target score through precision repair, not just more practice.
                 </p>
 <div class="flex flex-col sm:flex-row gap-md pt-md">
-<button class="bg-primary text-on-primary px-xl py-md rounded-xl font-headline-sm flex items-center justify-center gap-sm active:scale-95 transition-transform">
+<button data-scroll-target="#interactive-demo" class="bg-primary text-on-primary px-xl py-md rounded-xl font-headline-sm flex items-center justify-center gap-sm active:scale-95 transition-transform">
                         Start my Rescue Map
                     </button>
 <div class="flex items-center gap-sm px-md py-sm rounded-xl border border-outline-variant bg-surface-container-low">
@@ -270,7 +270,7 @@
 <span class="material-symbols-outlined text-secondary">chevron_right</span>
 </div>
 </div>
-<button class="w-full bg-secondary-container hover:bg-secondary-fixed text-primary px-md py-4 rounded-2xl font-headline-sm flex items-center justify-center gap-sm shadow-md mt-auto">
+<button data-scroll-target="#interactive-demo" class="w-full bg-secondary-container hover:bg-secondary-fixed text-primary px-md py-4 rounded-2xl font-headline-sm flex items-center justify-center gap-sm shadow-md mt-auto">
 <span class="material-symbols-outlined">photo_camera</span>
                                 Photograph your working
                             </button>
@@ -331,7 +331,7 @@
 </div>
 </section>
 <!-- How it Works -->
-<section class="py-xl max-w-container-max mx-auto px-gutter">
+<section id="how-it-works" class="py-xl max-w-container-max mx-auto px-gutter">
 <h2 class="font-display-lg text-center mb-xl">The Sabi System</h2>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
 <div class="text-center space-y-md">
@@ -357,7 +357,7 @@
 </div>
 </section>
 <!-- Interactive Demo -->
-<section class="py-xl bg-primary-container text-on-primary">
+<section id="interactive-demo" class="py-xl bg-primary-container text-on-primary">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
 <div class="space-y-lg">
@@ -401,7 +401,7 @@
 </div>
 </section>
 <!-- Exam Mistake DNA -->
-<section class="py-xl max-w-container-max mx-auto px-gutter">
+<section id="mistake-dna" class="py-xl max-w-container-max mx-auto px-gutter">
 <div class="flex flex-col md:flex-row justify-between items-end gap-md mb-xl">
 <div class="max-w-xl">
 <h2 class="font-display-lg">Your Exam Mistake DNA</h2>
@@ -446,7 +446,7 @@
 </div>
 </section>
 <!-- Teacher Section -->
-<section class="py-xl bg-surface-container-high">
+<section id="teacher-tools" class="py-xl bg-surface-container-high">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
 <div class="order-2 lg:order-1">
@@ -479,7 +479,7 @@
 <h6 class="font-headline-sm">Recommended Reteach</h6>
 </div>
 <p class="text-sm mb-lg">82% of students failed question 14 due to incorrect application of the quadratic formula denominator.</p>
-<button class="bg-primary text-on-primary w-full py-md rounded-xl font-label-md flex items-center justify-center gap-sm">
+<button data-scroll-target="#interactive-demo" class="bg-primary text-on-primary w-full py-md rounded-xl font-label-md flex items-center justify-center gap-sm">
 <span class="material-symbols-outlined">present_to_all</span>
                                         Get 8-minute reteach slide deck
                                     </button>
@@ -513,7 +513,7 @@
 <div class="max-w-3xl mx-auto px-gutter space-y-xl">
 <h2 class="font-display-lg text-display-lg leading-tight">Your target score is built one fixed mistake at a time.</h2>
 <div class="flex flex-col items-center gap-lg">
-<button class="bg-primary text-on-primary px-xl py-lg rounded-2xl font-headline-md shadow-xl hover:scale-105 active:scale-95 transition-all">
+<button data-scroll-target="#interactive-demo" class="bg-primary text-on-primary px-xl py-lg rounded-2xl font-headline-md shadow-xl hover:scale-105 active:scale-95 transition-all">
                         Start my Rescue Map
                     </button>
 <p class="text-on-surface-variant flex items-center gap-sm">
@@ -536,10 +536,10 @@
 <div class="space-y-md">
 <h6 class="font-label-md uppercase tracking-widest text-on-primary-container">Navigation</h6>
 <ul class="space-y-sm text-sm opacity-80">
-<li><a class="hover:text-secondary-fixed transition-colors" href="#">How it works</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors" href="#">For students</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors" href="#">For teachers</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors" href="#">Pricing</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#how-it-works">How it works</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#interactive-demo">For students</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#teacher-tools">For teachers</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#interactive-demo">Pricing</a></li>
 </ul>
 </div>
 <div class="space-y-md">
@@ -558,6 +558,11 @@
 <!-- Micro-interaction Script -->
 <script>
         document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-scroll-target]').forEach((button) => {
+                button.addEventListener('click', () => {
+                    document.querySelector(button.dataset.scrollTarget)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
             // Subtle parallax for the paper background grain on scroll
             window.addEventListener('scroll', () => {
                 const scrolled = window.pageYOffset;
