@@ -171,6 +171,23 @@
             border-radius: 9999px;
             object-fit: cover;
         }
+        .hero-message {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 2rem 1rem;
+            border-radius: 1.5rem;
+        }
+        .hero-message::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            opacity: 0.72;
+            background:
+                linear-gradient(180deg, rgba(251, 249, 246, 0.94) 0%, rgba(251, 249, 246, 0.72) 100%),
+                url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuTbUudDIKl3cf70XF1-WgIejE3KzboEohDeLEVb1M7LTRFE5n4zZ3uQjmMxxRXoeA0VuNSJmLyVzSWwCunlM_eEWBTYGHmS0g-Z73IEzIZ5--LUF7YtknKS_Fgr7K31yp4dry1Dh8X7yAcHscuWwPRNd8MTcV5wNO0KOdB10XG0C6G0FZ5nUhCHQn3S1c3fUDSpXeo9O6p1NiGHPs9dbmPvtshsylMUChbvjxdq4VXzVpflnUB2qRvdWeFQ0c9PxL9c4HykzN3T0v") center / cover;
+        }
         @media (prefers-reduced-motion: reduce) {
             .hero-3d-card { animation: none; }
         }
@@ -198,7 +215,7 @@
 <main class="w-full">
 <!-- Hero Section -->
 <section class="px-gutter pt-xl pb-lg overflow-hidden relative">
-<div class="max-w-container-max mx-auto flex flex-col items-center text-center">
+<div class="max-w-container-max mx-auto flex flex-col items-center text-center hero-message">
 <h1 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-md max-w-xs">Every mistake has a way back.</h1>
 <p class="font-body-md text-on-surface-variant mb-lg max-w-sm">
                     Stop guessing. SabiCoach analyzes your practice errors to create a personalized <span class="text-secondary font-bold">Rescue Map</span> to exam success.
