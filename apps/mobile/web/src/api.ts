@@ -1,6 +1,6 @@
 import { DEMO_DIAGNOSIS, type Diagnosis } from "./types.js";
 
-const API_BASE_URL = (window as Window & { __SABICOACH_API_URL__?: string }).__SABICOACH_API_URL__ ?? window.location.origin;
+const API_BASE_URL = (window as Window & { __SABICOACH_API_URL__?: string }).__SABICOACH_API_URL__ ?? (window.location.hostname === "localhost" ? "http://localhost:4000" : window.location.origin);
 const REQUEST_TIMEOUT_MS = 12_000;
 
 export class ApiError extends Error {}
