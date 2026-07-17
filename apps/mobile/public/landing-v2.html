@@ -1,0 +1,351 @@
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SabiCoach | Every Mistake Has a Way Back</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#bbcac1",
+                    "secondary": "#4d6700",
+                    "on-tertiary-fixed-variant": "#3c4a43",
+                    "primary-container": "#1a2f23",
+                    "primary": "#051a0f",
+                    "on-secondary-container": "#506c00",
+                    "outline-variant": "#c2c8c2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#394d00",
+                    "on-primary-fixed": "#0a2014",
+                    "on-background": "#1b1c1b",
+                    "tertiary-fixed": "#d7e6dd",
+                    "primary-fixed": "#d0e9d6",
+                    "inverse-primary": "#b4ccbb",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dbdad7",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#809787",
+                    "surface-container-low": "#f5f3f1",
+                    "on-secondary-fixed": "#151f00",
+                    "tertiary": "#0c1813",
+                    "surface-container": "#efeeeb",
+                    "outline": "#737973",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1b1c1b",
+                    "primary-fixed-dim": "#b4ccbb",
+                    "on-primary-fixed-variant": "#364c3e",
+                    "surface-bright": "#fbf9f6",
+                    "on-tertiary-fixed": "#111e19",
+                    "secondary-fixed": "#bbf600",
+                    "surface-container-highest": "#e3e2e0",
+                    "background": "#fbf9f6",
+                    "on-tertiary-container": "#86958d",
+                    "surface-container-high": "#e9e8e5",
+                    "surface": "#fbf9f6",
+                    "inverse-surface": "#30312f",
+                    "inverse-on-surface": "#f2f0ee",
+                    "secondary-fixed-dim": "#a4d700",
+                    "surface-tint": "#4d6355",
+                    "on-surface-variant": "#424843",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#b9f300",
+                    "tertiary-container": "#202d27",
+                    "surface-variant": "#e3e2e0",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "xl": "40px",
+                    "md": "16px",
+                    "gutter": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .paper-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+        }
+        .rescue-gradient {
+            background: linear-gradient(135deg, #fbf9f6 0%, #efeeeb 100%);
+        }
+        .bento-card {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .bento-card:active {
+            transform: scale(0.98);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-x-hidden">
+<div class="paper-grain"></div>
+<!-- Top Navigation Anchor -->
+<header class="bg-background dark:bg-background docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center px-gutter py-sm w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary dark:text-primary-fixed-dim italic">SabiCoach</span>
+</div>
+<button class="text-primary dark:text-primary-fixed-dim font-label-md px-4 py-2 hover:opacity-80 transition-opacity active:scale-95">
+                Data Save
+            </button>
+</div>
+</header>
+<main class="w-full">
+<!-- Hero Section -->
+<section class="px-gutter pt-xl pb-lg overflow-hidden relative">
+<div class="max-w-container-max mx-auto flex flex-col items-center text-center">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-md max-w-xs">Every mistake has a way back.</h1>
+<p class="font-body-md text-on-surface-variant mb-lg max-w-sm">
+                    Stop guessing. SabiCoach analyzes your practice errors to create a personalized <span class="text-secondary font-bold">Rescue Map</span> to exam success.
+                </p>
+<div class="flex flex-col gap-md w-full">
+<button class="bg-primary text-on-primary py-4 px-8 rounded-xl font-headline-sm hover:opacity-90 active:scale-95 transition-all shadow-lg">
+                        Start my Rescue Map
+                    </button>
+<button class="border-2 border-primary text-primary py-4 px-8 rounded-xl font-headline-sm hover:bg-primary-fixed transition-all">
+                        View Demo
+                    </button>
+</div>
+<!-- App Mockup / Rescue Map Visualization -->
+<div class="mt-xl relative w-full flex justify-center">
+<div class="absolute inset-0 bg-secondary-fixed-dim/20 blur-3xl rounded-full -z-10"></div>
+<div class="w-64 h-[500px] bg-white rounded-[3rem] border-[8px] border-primary-container shadow-2xl relative overflow-hidden bento-card">
+<div class="absolute top-0 w-full h-6 bg-primary-container"></div>
+<div class="p-md pt-lg">
+<div class="flex justify-between items-center mb-md">
+<span class="font-label-md text-primary">Rescue Map #01</span>
+<span class="material-symbols-outlined text-secondary" data-icon="auto_graph">auto_graph</span>
+</div>
+<div class="space-y-sm">
+<div class="bg-surface-container rounded-lg p-sm">
+<p class="font-label-sm text-on-surface-variant uppercase">Critical Gap</p>
+<p class="font-headline-sm text-primary">Algebraic Logic</p>
+<div class="w-full bg-outline-variant h-2 rounded-full mt-2">
+<div class="bg-secondary-fixed w-[40%] h-full rounded-full"></div>
+</div>
+</div>
+<div class="bg-primary-container text-white rounded-lg p-sm">
+<p class="font-label-sm opacity-70">Suggested Path</p>
+<p class="font-body-md">Practice 15 equations with 'Variable Isolation' focus.</p>
+</div>
+<img class="w-full h-32 object-cover rounded-lg" data-alt="A clean, high-fidelity UI mockup of a mobile learning application showing a growth chart and educational progress icons. The interface is dominated by forest green and lime accents on a creamy off-white background, creating a premium academic feel. The lighting is soft and even, highlighting the sleek minimalist design of the digital dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfHu_4D9Uhte8R_DdncukW10LkLbVwbjFghIkRCF-Ahqw6hXGppAISV9Lq_QFRxsQoceRWiqxMvSCjecs9GleHd3ln20wzr3KOQUSDuyKEoPrtyw2wZk2PdP1v87Z-vmchVeZhVZW2SPe2BnMboTWTzf2xb2CJ9GJgpR04pdcChXwbX981hZh7niHrkZh6974AmDXPw-KoWSaDptf4WdhpNqMBct18zcYRpv9CE_qgJbI8jxV5G8nH6XuWMzJ1Zz7ZR9aeUF84y0bb"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem/Solution Bento -->
+<section class="px-gutter py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto space-y-md">
+<div class="text-center mb-lg">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary">The Loop of Failure</h2>
+<p class="font-body-md text-on-surface-variant">Why traditional practice isn't enough.</p>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<div class="bg-white p-lg rounded-2xl shadow-sm border border-outline-variant/30 bento-card">
+<span class="material-symbols-outlined text-error text-4xl mb-md" data-icon="block">block</span>
+<h3 class="font-headline-sm text-primary mb-sm">The 'Just Practice' Lie</h3>
+<p class="font-body-md text-on-surface-variant">Doing 1,000 questions without analyzing why you missed 200 is just repeating mistakes, not learning.</p>
+</div>
+<div class="bg-secondary-container p-lg rounded-2xl shadow-sm border border-secondary-fixed/50 bento-card">
+<span class="material-symbols-outlined text-secondary text-4xl mb-md" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline-sm text-primary mb-sm">The Sabi Solution</h3>
+<p class="font-body-md text-on-surface-variant">We identify the "DNA" of your error—whether it's a conceptual gap or a timing issue—and fix it instantly.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How it works -->
+<section class="px-gutter py-xl">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-xl">The 4-Step Rescue</h2>
+<div class="space-y-xl relative">
+<div class="absolute left-4 top-0 bottom-0 w-0.5 bg-outline-variant"></div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">1</div>
+<h3 class="font-headline-sm text-primary">Diagnostic Upload</h3>
+<p class="font-body-md text-on-surface-variant">Take a photo of your practice sheet or complete an in-app quiz.</p>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">2</div>
+<h3 class="font-headline-sm text-primary">DNA Analysis</h3>
+<p class="font-body-md text-on-surface-variant">Our AI maps exactly which cognitive hurdle tripped you up.</p>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">3</div>
+<h3 class="font-headline-sm text-primary">Targeted Drills</h3>
+<p class="font-body-md text-on-surface-variant">Solve 5 hyper-focused problems designed to break the bad habit.</p>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">4</div>
+<h3 class="font-headline-sm text-primary">Exam Readiness</h3>
+<p class="font-body-md text-on-surface-variant">Watch your "Recoverable Marks" score hit 100%.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Demo Card -->
+<section class="px-gutter py-xl">
+<div class="bg-primary-container text-white p-lg rounded-[2rem] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed/10 blur-3xl"></div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile mb-md italic">Try the Rescue Map</h2>
+<p class="font-body-md mb-lg opacity-80">Tap an error to see the fix.</p>
+<div class="space-y-sm">
+<button class="w-full text-left bg-white/10 p-md rounded-xl border border-white/20 flex items-center justify-between group active:scale-95 transition-all" onclick="toggleDemo('calc')">
+<span class="font-headline-sm">Calculation Error</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="hidden p-md bg-secondary/20 rounded-xl mt-sm text-on-secondary-fixed-variant" id="demo-calc">
+<p class="font-label-md uppercase mb-xs text-secondary-fixed">Fix Protocol</p>
+<p class="font-body-md">SabiCoach locks you into 'Step-by-Step' mode for 3 drills to force checking work.</p>
+</div>
+<button class="w-full text-left bg-white/10 p-md rounded-xl border border-white/20 flex items-center justify-between group active:scale-95 transition-all" onclick="toggleDemo('concept')">
+<span class="font-headline-sm">Concept Gap</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="hidden p-md bg-secondary/20 rounded-xl mt-sm text-on-secondary-fixed-variant" id="demo-concept">
+<p class="font-label-md uppercase mb-xs text-secondary-fixed">Fix Protocol</p>
+<p class="font-body-md">A 60-second video explainer is unlocked before your next practice set.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Exam Mistake DNA -->
+<section class="px-gutter py-xl bg-white">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-lg text-center">Recoverable Marks</h2>
+<div class="flex flex-col items-center justify-center gap-xl">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="16"></circle>
+<circle class="text-secondary-fixed rounded-full" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.9" stroke-dashoffset="138" stroke-width="16"></circle>
+</svg>
+<div class="absolute text-center">
+<span class="block font-display-lg-mobile text-primary">+75%</span>
+<span class="block font-label-sm text-on-surface-variant uppercase">Potential</span>
+</div>
+</div>
+<div class="space-y-md text-center max-w-xs">
+<p class="font-body-md text-on-surface-variant">The average student leaves <span class="font-bold text-primary italic">75% of their potential marks</span> on the table due to repeatable mistakes.</p>
+<p class="font-body-md text-on-surface-variant">Our DNA mapping finds them before the final exam does.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Teacher Section -->
+<section class="px-gutter py-xl bg-surface-container-highest">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full border-4 border-white shadow-md mb-md overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a friendly, professional African educator in a bright, modern studio. She wears a minimalist business-casual outfit. The background is a clean, academic cream color with a soft sage green plant in the corner. The lighting is warm and inviting, emphasizing wisdom and accessibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtL7hjso3zMItQsnkX9OaMMNxbp_Ki-Pb1pPhjrcBrsuJGGVgYSDAkCAQmRN0nz1p7E2xOdxmjx1p5PVqKsIluVrkEv7xpIlN8l4FxDqCJvg6Q8WFAoDZjxXieogY-ZAmyk-qwju00ZUtyiHcL23ZrC-JJBnqcKZ7Qlv01pIFycvSZphHkVU8G2iAm6_OOpBLa2FX2klPh0cC00p-qVlgp-stpQhUss22E-awH7P6Nt3yY6AucTYS6Mv2UkJH-SKukz9483lF6ryLz"/>
+</div>
+<h2 class="font-headline-md text-primary mb-sm">Built by Master Educators</h2>
+<p class="font-body-md text-on-surface-variant mb-lg italic">"We didn't build an app to replace teachers. We built a map to help students understand where they got lost."</p>
+<p class="font-label-md text-primary">— Dr. Ifeoma A., Chief Pedagogy Officer</p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-gutter py-xl bg-background text-center">
+<div class="max-w-container-max mx-auto flex flex-col items-center">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-md">Ready to stop losing marks?</h2>
+<button class="bg-secondary-fixed text-on-secondary-fixed py-5 px-10 rounded-2xl font-headline-md hover:shadow-xl transition-all active:scale-95 mb-lg">
+                    Start my Rescue Map
+                </button>
+<p class="font-label-sm text-on-surface-variant">Join 50,000+ students reclaiming their grades.</p>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 shadow-lg bg-surface dark:bg-surface-container-lowest rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-variant dark:hover:bg-primary-container active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-label-sm text-label-sm">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-variant dark:hover:bg-primary-container active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="auto_graph">auto_graph</span>
+<span class="font-label-sm text-label-sm">Mastery</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container p-2 hover:bg-surface-variant dark:hover:bg-primary-container active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<footer class="pb-32 pt-lg text-center px-gutter">
+<p class="font-label-sm text-on-surface-variant">© 2024 SabiCoach. Made for the curious mind.</p>
+</footer>
+<script>
+        function toggleDemo(id) {
+            const el = document.getElementById('demo-' + id);
+            const isHidden = el.classList.contains('hidden');
+            
+            // Hide others
+            document.querySelectorAll('[id^="demo-"]').forEach(d => d.classList.add('hidden'));
+            
+            if (isHidden) {
+                el.classList.remove('hidden');
+            }
+        }
+    </script>
+</body></html>
