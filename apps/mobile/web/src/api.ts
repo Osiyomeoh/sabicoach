@@ -33,7 +33,13 @@ export async function diagnoseAttempt(imageDataUrl?: string): Promise<{ diagnosi
 export async function authenticate(mode: "signup" | "login", input: { displayName?: string; email: string; password: string }): Promise<AuthStudent> {
   if (!API_BASE_URL) throw new ApiError("The account service is not available yet. Please try again shortly.");
   const response = await fetch(`${API_BASE_URL}/api/auth/${mode}`, { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, signal: withTimeout(), body: JSON.stringify(input) });
-  const body = await response.json().catch(() => ({})) as { student?: AuthStudent; error?: string };
-  if (!response.ok || !body.student) throw new ApiError(body.error ?? "We could not complete that request. Please try again.");
+  const rawBody = await response.text();
+  let body: { student?: AuthStudent; error?: string; code?: string; detail?: string } = {};
+  try { body = JSON.parse(rawBody) as typeof body; } catch { /* Non-JSON responses are typically platform errors. */ }
+  if (!response.ok || !body.student) {
+    console.error("SabiCoach authentication request failed", { status: response.status, body: rawBody.slice(0, 500) });
+    const context = body.code ? ` (${body.code})` : ` (HTTP ${response.status})`;
+    throw new ApiError((body.detail ?? body.error ?? "Account service request failed.") + context);
+  }
   return body.student;
 }

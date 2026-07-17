@@ -39,5 +39,13 @@ export default async function handler(request: Request, response: Response): Pro
       response.setHeader("Set-Cookie", sessionCookie(token)); response.status(200).json({ student: publicStudent(student) }); return;
     }
     response.status(404).json({ error: "Not found." });
-  } catch (error) { console.error("SabiCoach account API failed", error); response.status(500).json({ error: "We could not complete this request. Please try again." }); }
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : "Unknown server error";
+    console.error("SabiCoach account API failed", { action: request.query.action, detail, error });
+    response.status(500).json({
+      error: "We could not complete this request. Please try again.",
+      code: "ACCOUNT_API_FAILURE",
+      ...(process.env.AUTH_DEBUG === "true" ? { detail } : {})
+    });
+  }
 }
