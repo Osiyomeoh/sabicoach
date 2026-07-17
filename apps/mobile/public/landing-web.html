@@ -155,6 +155,19 @@
             object-fit: cover;
             border-radius: 0.75rem;
         }
+        .student-photo-orbit {
+            position: absolute;
+            z-index: 0;
+            width: 24rem;
+            height: 24rem;
+            border-radius: 9999px;
+            overflow: hidden;
+            opacity: 0.22;
+            filter: saturate(0.8) contrast(1.08);
+            transform: rotate(9deg) scale(1.08);
+            box-shadow: 0 0 0 18px rgba(185, 243, 0, 0.14);
+        }
+        .student-photo-orbit img { width: 100%; height: 100%; object-fit: cover; }
         .student-proof--one { left: -2.4rem; top: 16%; transform: rotate(-8deg); }
         .student-proof--two { right: -2.8rem; bottom: 17%; transform: rotate(7deg); animation-delay: -2.4s; }
         @keyframes studentFloat {
@@ -162,7 +175,7 @@
             50% { margin-top: -10px; }
         }
         @media (max-width: 1023px) {
-            .student-proof { display: none; }
+            .student-proof, .student-photo-orbit { display: none; }
         }
         @media (prefers-reduced-motion: reduce) {
             .hero-3d-card, .student-proof { animation: none; }
@@ -213,7 +226,10 @@
 </div>
 </div>
 <div class="relative flex justify-center lg:justify-end fade-in hero-3d-stage" style="animation-delay: 0.2s">
-<div class="hero-3d-card relative w-full max-w-sm aspect-[9/19] bg-primary-container rounded-[3rem] p-4 shadow-2xl border-8 border-primary overflow-hidden">
+<div class="student-photo-orbit" aria-hidden="true">
+<img alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuTbUudDIKl3cf70XF1-WgIejE3KzboEohDeLEVb1M7LTRFE5n4zZ3uQjmMxxRXoeA0VuNSJmLyVzSWwCunlM_eEWBTYGHmS0g-Z73IEzIZ5--LUF7YtknKS_Fgr7K31yp4dry1Dh8X7yAcHscuWwPRNd8MTcV5wNO0KOdB10XG0C6G0FZ5nUhCHQn3S1c3fUDSpXeo9O6p1NiGHPs9dbmPvtshsylMUChbvjxdq4VXzVpflnUB2qRvdWeFQ0c9PxL9c4HykzN3T0v"/>
+</div>
+<div class="hero-3d-card z-10 relative w-full max-w-sm aspect-[9/19] bg-primary-container rounded-[3rem] p-4 shadow-2xl border-8 border-primary overflow-hidden">
 <!-- Mobile UI Mockup -->
 <div class="h-full w-full bg-background rounded-[2rem] overflow-hidden flex flex-col">
 <div class="p-6 space-y-6">
@@ -261,14 +277,14 @@
 </div>
 </div>
 <div class="student-proof student-proof--one">
-<img alt="Student preparing for JAMB with SabiCoach" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=180&amp;q=85"/>
+<img alt="Nigerian students studying together with SabiCoach" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuTbUudDIKl3cf70XF1-WgIejE3KzboEohDeLEVb1M7LTRFE5n4zZ3uQjmMxxRXoeA0VuNSJmLyVzSWwCunlM_eEWBTYGHmS0g-Z73IEzIZ5--LUF7YtknKS_Fgr7K31yp4dry1Dh8X7yAcHscuWwPRNd8MTcV5wNO0KOdB10XG0C6G0FZ5nUhCHQn3S1c3fUDSpXeo9O6p1NiGHPs9dbmPvtshsylMUChbvjxdq4VXzVpflnUB2qRvdWeFQ0c9PxL9c4HykzN3T0v"/>
 <div>
 <p class="font-label-md text-primary">Amina</p>
 <p class="text-label-sm text-secondary">Fixed algebra</p>
 </div>
 </div>
 <div class="student-proof student-proof--two">
-<img alt="Student building confidence with SabiCoach" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=180&amp;q=85"/>
+<img alt="Focused Nigerian student using SabiCoach" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwdbqRF4FrdX2J_tQqfypfFePVofBksiCC8v8KSN2PtXyOam3CRAAQFvz5e7cfraBdyxGUjkLcTu6zNEl5oxmwFuEGmPLFz3C0OL-UU23XNy_WMXsCQ5rXNuoz-QjyHoAaV9UYf3PjZTFiCf8rERARiJ4oZs3dKYfaqNOhi-oC5VQ3gmywUaHRMQ9i64Cqmni1JeH7I43ONrxLiW9IeyY5KvaePU9AC-BLmHQtk5GGfzK3wdqMARo7e-vA672NMS_ed9mRAFWiF7pj"/>
 <div>
 <p class="font-label-md text-primary">Tunde</p>
 <p class="text-label-sm text-secondary">+18 marks back</p>
