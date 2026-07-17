@@ -146,6 +146,31 @@
             0%, 100% { transform: rotateX(4deg) rotateY(-10deg) rotateZ(1deg) translateY(0); }
             50% { transform: rotateX(-1deg) rotateY(-4deg) rotateZ(-1deg) translateY(-12px); }
         }
+        .student-story-strip {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+        .student-story {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.55rem;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(194, 200, 194, 0.9);
+            border-radius: 1rem;
+            box-shadow: 0 12px 28px rgba(5, 26, 15, 0.1);
+        }
+        .student-story img {
+            width: 2.6rem;
+            height: 2.6rem;
+            flex: none;
+            border-radius: 9999px;
+            object-fit: cover;
+        }
         @media (prefers-reduced-motion: reduce) {
             .hero-3d-card { animation: none; }
         }
@@ -211,6 +236,16 @@
 <img class="w-full h-32 object-cover rounded-lg" data-alt="A clean, high-fidelity UI mockup of a mobile learning application showing a growth chart and educational progress icons. The interface is dominated by forest green and lime accents on a creamy off-white background, creating a premium academic feel. The lighting is soft and even, highlighting the sleek minimalist design of the digital dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfHu_4D9Uhte8R_DdncukW10LkLbVwbjFghIkRCF-Ahqw6hXGppAISV9Lq_QFRxsQoceRWiqxMvSCjecs9GleHd3ln20wzr3KOQUSDuyKEoPrtyw2wZk2PdP1v87Z-vmchVeZhVZW2SPe2BnMboTWTzf2xb2CJ9GJgpR04pdcChXwbX981hZh7niHrkZh6974AmDXPw-KoWSaDptf4WdhpNqMBct18zcYRpv9CE_qgJbI8jxV5G8nH6XuWMzJ1Zz7ZR9aeUF84y0bb"/>
 </div>
 </div>
+</div>
+</div>
+<div class="student-story-strip">
+<div class="student-story">
+<img alt="Student using SabiCoach for mathematics practice" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=160&amp;q=85"/>
+<div><p class="font-label-sm text-primary">Amina</p><p class="text-xs text-secondary">Algebra fixed</p></div>
+</div>
+<div class="student-story">
+<img alt="Student using SabiCoach to prepare for examinations" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=160&amp;q=85"/>
+<div><p class="font-label-sm text-primary">Tunde</p><p class="text-xs text-secondary">+18 marks back</p></div>
 </div>
 </div>
 </div>

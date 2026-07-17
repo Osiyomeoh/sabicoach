@@ -135,8 +135,37 @@
             0%, 100% { transform: rotateX(5deg) rotateY(-14deg) rotateZ(1deg) translateY(0); }
             50% { transform: rotateX(-1deg) rotateY(-7deg) rotateZ(-1deg) translateY(-18px); }
         }
+        .student-proof {
+            position: absolute;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.55rem;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(194, 200, 194, 0.9);
+            border-radius: 1rem;
+            box-shadow: 0 18px 38px rgba(5, 26, 15, 0.16);
+            backdrop-filter: blur(12px);
+            animation: studentFloat 5s ease-in-out infinite;
+        }
+        .student-proof img {
+            width: 3.1rem;
+            height: 3.1rem;
+            object-fit: cover;
+            border-radius: 0.75rem;
+        }
+        .student-proof--one { left: -2.4rem; top: 16%; transform: rotate(-8deg); }
+        .student-proof--two { right: -2.8rem; bottom: 17%; transform: rotate(7deg); animation-delay: -2.4s; }
+        @keyframes studentFloat {
+            0%, 100% { margin-top: 0; }
+            50% { margin-top: -10px; }
+        }
+        @media (max-width: 1023px) {
+            .student-proof { display: none; }
+        }
         @media (prefers-reduced-motion: reduce) {
-            .hero-3d-card { animation: none; }
+            .hero-3d-card, .student-proof { animation: none; }
         }
     </style>
 </head>
@@ -229,6 +258,20 @@
                                 Photograph your working
                             </button>
 </div>
+</div>
+</div>
+<div class="student-proof student-proof--one">
+<img alt="Student preparing for JAMB with SabiCoach" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=180&amp;q=85"/>
+<div>
+<p class="font-label-md text-primary">Amina</p>
+<p class="text-label-sm text-secondary">Fixed algebra</p>
+</div>
+</div>
+<div class="student-proof student-proof--two">
+<img alt="Student building confidence with SabiCoach" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=180&amp;q=85"/>
+<div>
+<p class="font-label-md text-primary">Tunde</p>
+<p class="text-label-sm text-secondary">+18 marks back</p>
 </div>
 </div>
 <!-- Decorative Elements -->
