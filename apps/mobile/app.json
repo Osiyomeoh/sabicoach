@@ -1,1 +1,29 @@
-{ "expo": { "name": "SabiCoach", "slug": "sabicoach", "version": "0.1.0", "orientation": "portrait", "userInterfaceStyle": "light", "splash": { "resizeMode": "contain", "backgroundColor": "#fbf9f6" }, "web": { "output": "single", "bundler": "metro" }, "android": { "package": "com.sabicoach.app" }, "ios": { "bundleIdentifier": "com.sabicoach.app" } } }
+{
+  "expo": {
+    "name": "SabiCoach",
+    "slug": "sabicoach",
+    "owner": "osiyomeoh",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#fbf9f6"
+    },
+    "web": {
+      "output": "single",
+      "bundler": "metro"
+    },
+    "android": {
+      "package": "com.sabicoach.app"
+    },
+    "ios": {
+      "bundleIdentifier": "com.sabicoach.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a6aaf5f5-cf41-4b9d-a2d5-11484b726d37"
+      }
+    }
+  }
+}
