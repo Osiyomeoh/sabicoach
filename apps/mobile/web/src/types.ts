@@ -18,6 +18,7 @@ export type RescueState = {
   displayName: string;
   examType: "JAMB" | "WAEC" | "NECO";
   imageDataUrl?: string;
+  captureError?: string;
   diagnosis: Diagnosis;
   masteryVerified: boolean;
   currentScore: number;

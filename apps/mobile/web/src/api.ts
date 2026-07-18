@@ -1,4 +1,4 @@
-import { DEMO_DIAGNOSIS, type Diagnosis } from "./types.js";
+import { type Diagnosis } from "./types.js";
 
 const API_BASE_URL = (window as Window & { __SABICOACH_API_URL__?: string }).__SABICOACH_API_URL__ ?? (window.location.hostname === "localhost" ? "http://localhost:4000" : window.location.origin);
 const REQUEST_TIMEOUT_MS = 12_000;
@@ -14,20 +14,19 @@ function withTimeout(signal?: AbortSignal): AbortSignal {
   return controller.signal;
 }
 
-export async function diagnoseAttempt(imageDataUrl?: string): Promise<{ diagnosis: Diagnosis; source: "ai" | "demo" }> {
-  if (!API_BASE_URL) return { diagnosis: DEMO_DIAGNOSIS, source: "demo" };
-  try {
-    const response = await fetch(`${API_BASE_URL}/api/diagnose`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      signal: withTimeout(),
-      body: JSON.stringify({ image: imageDataUrl, examType: "JAMB", question: "Solve 3x − 4 = 11", attempt: "3x = 11 − 4, x = 7 ÷ 3" })
-    });
-    if (!response.ok) throw new Error(`Diagnosis request failed: ${response.status}`);
-    return { diagnosis: await response.json() as Diagnosis, source: "ai" };
-  } catch {
-    return { diagnosis: DEMO_DIAGNOSIS, source: "demo" };
-  }
+export async function diagnoseAttempt(imageDataUrl?: string): Promise<Diagnosis> {
+  if (!API_BASE_URL || !imageDataUrl) throw new ApiError("Choose a JPG or PNG image first.");
+  const response = await fetch(`${API_BASE_URL}/api/diagnose`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    signal: withTimeout(),
+    body: JSON.stringify({ image: imageDataUrl, examType: "JAMB" })
+  });
+  const rawBody = await response.text();
+  let body: Diagnosis | { error?: string } = {};
+  try { body = JSON.parse(rawBody) as typeof body; } catch { /* Platform error pages may not be JSON. */ }
+  if (!response.ok || !("diagnosis" in body)) throw new ApiError(("error" in body && body.error) || "We could not analyse this image. Please try a clearer photo.");
+  return body as Diagnosis;
 }
 
 export async function authenticate(mode: "signup" | "login", input: { displayName?: string; email: string; password: string }): Promise<AuthStudent> {
