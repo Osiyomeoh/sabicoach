@@ -26,7 +26,8 @@ export async function diagnoseAttempt(imageDataUrl?: string): Promise<Diagnosis>
   let body: Diagnosis | { error?: string; code?: string; detail?: string } = {};
   try { body = JSON.parse(rawBody) as typeof body; } catch { /* Platform error pages may not be JSON. */ }
   if (!response.ok || !("diagnosis" in body)) {
-    const message = "detail" in body && body.detail ? body.detail : "error" in body && body.error ? body.error : "We could not analyse this image. Please try a clearer photo.";
+    const baseMessage = "detail" in body && body.detail ? body.detail : "error" in body && body.error ? body.error : "We could not analyse this image. Please try a clearer photo.";
+    const message = `${baseMessage} (HTTP ${response.status})`;
     throw new ApiError(message);
   }
   return body as Diagnosis;
