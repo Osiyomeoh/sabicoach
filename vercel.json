@@ -1,8 +1,5 @@
 {
-  "buildCommand": "npm run export:demo",
-  "outputDirectory": "apps/mobile/dist",
   "rewrites": [
-    { "source": "/demo", "destination": "/demo.html" },
-    { "source": "/", "destination": "/landing.html" }
+    { "source": "/app", "destination": "/app/index.html" }
   ]
 }

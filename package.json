@@ -2,6 +2,9 @@
   "name": "sabicoach",
   "private": true,
   "workspaces": ["apps/*"],
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
   "scripts": {
     "mobile": "npm --workspace @sabicoach/mobile run start",
     "api": "npm --workspace @sabicoach/api run dev",
