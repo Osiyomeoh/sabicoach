@@ -13,20 +13,8 @@ const SESSION_COOKIE = "sabicoach_session";
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 
 type Diagnosis = { diagnosis: string; misconception: string; confidence: number; lesson: string[]; coachQuestion: string; expectedAnswer: string; topic: string; teacherSignal: string; recoverableMarks: number };
-const demoDiagnosis: Diagnosis = {
-  diagnosis: "You understand how to collect like terms. The first wrong turn happens when −4 crosses the equals sign: it becomes +4, not −4.",
-  misconception: "Sign change during transposition",
-  confidence: 0.93,
-  lesson: ["Begin with 3x − 4 = 11.", "Add 4 to both sides. Now 3x = 15.", "Divide both sides by 3, so x = 5."],
-  coachQuestion: "Try this: 2y − 7 = 9. What is y?",
-  expectedAnswer: "8",
-  topic: "Linear equations",
-  teacherSignal: "This is a procedural slip. A short reteach on balancing equations can fix it.",
-  recoverableMarks: 12
-};
-
 async function getDiagnosis(input: { image?: string; question?: string; attempt?: string; examType?: string }): Promise<Diagnosis> {
-  if (!process.env.OPENAI_API_KEY) return demoDiagnosis;
+  if (!process.env.OPENAI_API_KEY) throw new Error("AI analysis is not configured.");
   const content: Array<Record<string, string>> = [{ type: "input_text", text: `You are SabiCoach, a warm Nigerian ${input.examType || "JAMB"} Mathematics coach. Analyse the student's work. Never give the answer first. Identify the first actionable mistake, distinguish conceptual gaps from procedural slips, then give three brief repair steps and one fresh near-transfer question. Return only valid JSON using exactly these keys: diagnosis, misconception, confidence, lesson, coachQuestion, expectedAnswer, topic, teacherSignal, recoverableMarks. Question: ${input.question || "Solve 3x − 4 = 11"}. Student attempt: ${input.attempt || "3x = 11 − 4, x = 7 ÷ 3"}` }];
   if (input.image) content.push({ type: "input_image", image_url: input.image, detail: "high" });
   const response = await fetch("https://api.openai.com/v1/responses", { method: "POST", headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}`, "Content-Type": "application/json" }, body: JSON.stringify({ model: process.env.OPENAI_MODEL || "gpt-5.6", input: [{ role: "user", content }] }) });
@@ -84,7 +72,8 @@ app.get("/api/home/:studentId", async (req, res) => {
 });
 app.post("/api/diagnose", async (req, res) => { try { res.json(await getDiagnosis(req.body)); } catch (error) { res.status(500).json({ error: error instanceof Error ? error.message : "Could not diagnose attempt" }); } });
 app.post("/api/attempts", async (req, res) => {
-  const { studentId = DEMO_STUDENT, examType = "JAMB", subject = "Mathematics", diagnosis = demoDiagnosis } = req.body as { studentId?: string; examType?: string; subject?: string; diagnosis?: Diagnosis };
+  const { studentId = DEMO_STUDENT, examType = "JAMB", subject = "Mathematics", diagnosis } = req.body as { studentId?: string; examType?: string; subject?: string; diagnosis?: Diagnosis };
+  if (!diagnosis) { res.status(400).json({ error: "A real analysis is required before saving an attempt." }); return; }
   if (pool) await pool.query("INSERT INTO attempts (student_id, exam_type, subject, topic, question_text, attempt_text, diagnosis) VALUES ($1,$2,$3,$4,$5,$6,$7)", [studentId, examType, subject, diagnosis.topic, req.body.question || "", req.body.attempt || "", diagnosis]);
   res.status(201).json({ saved: true });
 });
