@@ -1,6 +1,6 @@
 import { DEMO_DIAGNOSIS, type RescueState, type Stage } from "./types.js";
 
-const STORAGE_KEY = "sabicoach-rescue-state-v1";
+const STORAGE_KEY = "sabicoach-rescue-state-v2";
 const initialState = (): RescueState => ({ stage: "auth", authenticated: false, displayName: "Amara", examType: "JAMB", diagnosis: DEMO_DIAGNOSIS, masteryVerified: false, currentScore: 234, targetScore: 280 });
 
 export function loadState(): RescueState {
