@@ -57,13 +57,22 @@ export default async function handler(request: Request, response: Response): Pro
       headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
       body: JSON.stringify({ model: process.env.OPENAI_MODEL || "gpt-5.6", input: [{ role: "user", content }] })
     });
-    if (!aiResponse.ok) throw new Error(`OpenAI request failed (${aiResponse.status}).`);
+    if (!aiResponse.ok) {
+      const failure = await aiResponse.text();
+      console.error("OpenAI diagnosis request failed", { status: aiResponse.status, failure });
+      throw new Error(`OpenAI API returned ${aiResponse.status}.`);
+    }
     const aiBody = await aiResponse.json() as { output_text?: string };
     const parsed = cleanDiagnosis(JSON.parse((aiBody.output_text ?? "").replace(/^```json\s*|\s*```$/g, "")));
     if (!parsed) throw new Error("The analysis response was incomplete.");
     response.status(200).json(parsed);
   } catch (error) {
-    console.error("SabiCoach diagnosis failed", error);
-    response.status(502).json({ error: "We could not analyse this image. Please try a clearer photo." });
+    const detail = error instanceof Error ? error.message : "Unknown AI error.";
+    console.error("SabiCoach diagnosis failed", { detail, error });
+    response.status(502).json({
+      error: "AI analysis could not complete.",
+      code: "AI_ANALYSIS_FAILURE",
+      ...(process.env.AI_DEBUG === "true" ? { detail } : {})
+    });
   }
 }

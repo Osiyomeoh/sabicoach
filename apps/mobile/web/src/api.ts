@@ -23,9 +23,12 @@ export async function diagnoseAttempt(imageDataUrl?: string): Promise<Diagnosis>
     body: JSON.stringify({ image: imageDataUrl, examType: "JAMB" })
   });
   const rawBody = await response.text();
-  let body: Diagnosis | { error?: string } = {};
+  let body: Diagnosis | { error?: string; code?: string; detail?: string } = {};
   try { body = JSON.parse(rawBody) as typeof body; } catch { /* Platform error pages may not be JSON. */ }
-  if (!response.ok || !("diagnosis" in body)) throw new ApiError(("error" in body && body.error) || "We could not analyse this image. Please try a clearer photo.");
+  if (!response.ok || !("diagnosis" in body)) {
+    const message = "detail" in body && body.detail ? body.detail : "error" in body && body.error ? body.error : "We could not analyse this image. Please try a clearer photo.";
+    throw new ApiError(message);
+  }
   return body as Diagnosis;
 }
 
