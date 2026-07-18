@@ -2,8 +2,8 @@
   "buildCommand": "npm run export:web",
   "outputDirectory": "dist",
   "functions": {
-    "api/auth/signup.ts": { "runtime": "nodejs22.x" },
-    "api/auth/login.ts": { "runtime": "nodejs22.x" }
+    "api/signup.ts": { "runtime": "nodejs22.x" },
+    "api/login.ts": { "runtime": "nodejs22.x" }
   },
   "rewrites": [
     { "source": "/app", "destination": "/app/index.html" },

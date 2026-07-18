@@ -32,7 +32,7 @@ export async function diagnoseAttempt(imageDataUrl?: string): Promise<{ diagnosi
 
 export async function authenticate(mode: "signup" | "login", input: { displayName?: string; email: string; password: string }): Promise<AuthStudent> {
   if (!API_BASE_URL) throw new ApiError("The account service is not available yet. Please try again shortly.");
-  const response = await fetch(`${API_BASE_URL}/api/auth/${mode}`, { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, signal: withTimeout(), body: JSON.stringify(input) });
+  const response = await fetch(`${API_BASE_URL}/api/${mode}`, { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, signal: withTimeout(), body: JSON.stringify(input) });
   const rawBody = await response.text();
   let body: { student?: AuthStudent; error?: string; code?: string; detail?: string } = {};
   try { body = JSON.parse(rawBody) as typeof body; } catch { /* Non-JSON responses are typically platform errors. */ }
